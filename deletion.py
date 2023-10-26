@@ -9,7 +9,7 @@ projects_url = f'{SONAR_URL}/api/projects/search'
 projects_response = requests.get(projects_url, auth=auth)
 projects = projects_response.json()['components']
 
-# For each project, delete it
+# For each project, delete it from sonarqube
 for project in projects:
     project_key = project['key']
 
