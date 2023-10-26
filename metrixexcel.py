@@ -6,20 +6,20 @@ TOKEN = 'squ_cfb9a12eff55b1f109a0cfa506f9c26feba690d1'
 # Using the token for authentication
 auth = (TOKEN, '')
 
-# Get the list of all metrics
+
 metrics_url = f'{SONAR_URL}/api/metrics/search'
 metrics_response = requests.get(metrics_url, auth=auth)
 metrics = metrics_response.json()['metrics']
 metric_keys = [metric['key'] for metric in metrics]
 
-# Get the list of all projects
+
 projects_url = f'{SONAR_URL}/api/projects/search'
 projects_response = requests.get(projects_url, auth=auth)
 projects = projects_response.json()['components']
 
-# Create a Pandas Excel writer using XlsxWriter as the engine
+
 with pd.ExcelWriter('D:\\deneme3\\metric_results2.xlsx', engine='openpyxl') as writer:
-    # For each project, get the metrics
+    
     for project in projects:
         project_key = project['key']
         project_name = project['name']
