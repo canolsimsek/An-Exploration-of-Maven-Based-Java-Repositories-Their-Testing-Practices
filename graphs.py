@@ -73,5 +73,5 @@ def plot_normalized_scatter(file_path):
     cluster_analysis.plot_elbow_graph(max_clusters=6)
     cluster_analysis.perform_clustering(n_clusters=3)  # Use the number of clusters obtained from the elbow graph
 
-# Now using your file path
+# Now using the file path, please change with you own, hard coded
 plot_normalized_scatter('D:\\deneme3\\plotdata.xlsx')
